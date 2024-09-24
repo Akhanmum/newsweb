@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Top-10</title>
+    <!-- Font Awesome CDN for Icons -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="/script.js"></script>
+</head>
+<body>
+
+<nav class="navbar">
+    <!-- Logo -->
+    <a href="/index.html" class="logo"><img src="/Top-10.webp" style="width: 100px; height: 40px;" alt=""></a>
+
+    <!-- Hamburger Menu (Visible on Mobile) -->
+    <div class="hamburger" id="hamburger">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+
+    <!-- Navigation Links -->
+    <ul class="nav-links" id="nav-links">
+        <li><a href="/index.html">Home</a></li>
+        <!-- News Dropdown -->
+        <li>
+            <div class="card-container" id="news-container"></div>
+            <a href="#">News <i class="fa fa-caret-down"></i></a>
+            <ul class="dropdown">
+                <li><a href="#">World</a></li>
+                <li><a href="#">Local</a></li>
+                <li><a href="#">Politics</a></li>
+                <li><a href="#">Business</a></li>
+                <li><a href="#">Technology</a></li>
+                <li><a href="#">Sports</a></li>
+                <li><a href="#">Entertainment</a></li>
+                <li><a href="#">Health</a></li>
+                <li><a href="#">Science</a></li>
+            </ul>
+        </li>
+        <!-- Opinion Dropdown -->
+        <li>
+            <a href="#">Opinion <i class="fa fa-caret-down"></i></a>
+            <ul class="dropdown">
+                <li><a href="#">Editorial</a></li>
+                <li><a href="#">Op-Eds</a></li>
+                <li><a href="#">Guest Columns</a></li>
+            </ul>
+        </li>
+        <!-- Features Dropdown -->
+        <li>
+            <a href="#">Features <i class="fa fa-caret-down"></i></a>
+            <ul class="dropdown">
+                <li><a href="#">In-Depth</a></li>
+                <li><a href="#">Investigative</a></li>
+                <li><a href="#">Special Reports</a></li>
+            </ul>
+        </li>
+        <!-- Multimedia Dropdown -->
+        <li>
+            <a href="#">Multimedia <i class="fa fa-caret-down"></i></a>
+            <ul class="dropdown">
+                <li><a href="#">Videos</a></li>
+                <li><a href="#">Podcasts</a></li>
+                <li><a href="#">Photo Galleries</a></li>
+            </ul>
+        </li>
+        <li><a href="/about.html">About Us</a></li>
+        <li><a href="/contact.html">Contact Us</a></li>
+        <li><a href="/subscription.html" class="subscribe-btn">Subscribe</a></li>
+    </ul>
+</nav>
+
+<section id="subscription">
+    <div class="subscription-container">
+        <h2>Subscribe Now</h2>
+        <p>Get the latest news delivered to your inbox. Choose your plan below:</p>
+        
+        <div class="subscription-plans">
+            <div class="plan-card">
+                <h3>Monthly Plan</h3>
+                <p>Just $5/month</p>
+                <button class="subscribe-btn" data-plan="monthly">Subscribe</button>
+            </div>
+            <div class="plan-card">
+                <h3>Yearly Plan</h3>
+                <p>Save $10, Just $50/year</p>
+                <button class="subscribe-btn" data-plan="yearly">Subscribe</button>
+            </div>
+        </div>
+
+        <!-- Payment Form Section -->
+        <div id="payment-form" class="hidden">
+            <h3>Payment Details</h3>
+            <label for="upi-id">Enter your UPI ID:</label>
+            <input type="text" id="upi-id" placeholder="example@upi" required>
+            <button id="pay-btn">Pay Now</button>
+        </div>
+        
+        <div id="payment-message" class="hidden">
+            
+        </div>
+    </div>
+</section>
+
+<footer class="footer">
+    <div class="footer-container">
+        <!-- About Us -->
+        <div class="footer-section about">
+            <h3>About Us</h3>
+            <p>
+                Welcome to Top-10, your trusted source for the latest news and updates. We are committed to delivering accurate, timely, and insightful news across various categories to keep you informed.
+            </p>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="footer-section links">
+            <h3>Quick Links</h3>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">World</a></li>
+                <li><a href="#">Local</a></li>
+                <li><a href="#">Politics</a></li>
+                <li><a href="#">Business</a></li>
+                <li><a href="#">Technology</a></li>
+                <li><a href="#">Sports</a></li>
+                <li><a href="#">Contact Us</a></li>
+            </ul>
+        </div>
+
+        <!-- Contact Information -->
+        <div class="footer-section contact">
+            <h3>Contact Us</h3>
+            <p><i class="fa fa-map-marker-alt"></i> Shilphta, Mumbra, Thane, Maharashtra,India-4000612</p>
+            <p><i class="fa fa-phone"></i> +919892425250</p>
+            <p><i class="fa fa-envelope"></i> usetech6@gmail.com</p>
+        </div>
+        <!-- Social Media -->
+        <div class="footer-section social">
+            <h3>Follow Us</h3>
+            <div class="social-icons">
+                <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer Bottom -->
+    <div class="footer-bottom">
+        <p>&copy; 2024 NewsSite. All rights reserved.</p>
+    </div>
+</footer>
+
+<script>
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('nav-links');
+    const paymentForm = document.getElementById('payment-form');
+    const payBtns = document.querySelectorAll('.subscribe-btn');
+    const paymentMessage = document.getElementById('payment-message');
+
+    hamburger.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+    });
+
+    // Show payment form on subscription button click
+    payBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            paymentForm.classList.remove('hidden');
+            paymentMessage.classList.add('hidden'); // Hide previous payment message if any
+        });
+    });
+
+    // Handle payment button click
+    document.getElementById('pay-btn').addEventListener('click', () => {
+        const upiId = document.getElementById('upi-id').value;
+        if (upiId) {
+            paymentMessage.textContent = `Payment initiated for UPI ID: ${upiId}`;
+            paymentMessage.classList.remove('hidden');
+        } else {
+            paymentMessage.textContent = 'Please enter a valid UPI ID.';
+            paymentMessage.classList.remove('hidden');
+        }
+    });
+</script>
+
+</body>
+</html>
